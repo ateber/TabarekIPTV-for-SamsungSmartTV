@@ -8,7 +8,7 @@ TabarekIPTV is my own project I built on https://github.com/kosmodrey/hackTV :)
 * Searching channel by name
 * Added channel list url and running from the there
 * Lock / Unlock system (You can create a password) 
-* Channel number, logo and bottom channel info
+* Added Channel number, logo and bottom channel info
 * Added blacklist channel or category
 * Added Custom Cursor for App
 * Fast forward and rewind pushing button (also created GUI)
