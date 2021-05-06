@@ -15,7 +15,7 @@ TabarekIPTV is my own project I built on https://github.com/kosmodrey/hackTV :)
 * Fast forward and rewind pushing button (also created GUI)
 * Jumping specific channel by remote number buttons (1,2,3,4,5,6,7,8,9,0)
 * Added shortcut buttons
-* And Others new features :)
+* And Other new features :)
 
 NOTE: I downloaded channel list for example. 
 
