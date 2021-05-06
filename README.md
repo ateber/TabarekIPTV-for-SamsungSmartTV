@@ -17,7 +17,14 @@ TabarekIPTV is my own project I built on https://github.com/kosmodrey/hackTV :)
 * Added shortcut buttons
 * And Others features :)
 
+# Screenshots 
 
 ![Photoshot of TabarekTV](https://raw.githubusercontent.com/ateber/TabarekIPTV-for-SamsungSmartTV/main/Screenshots/1.png)
 ![Photoshot of TabarekTV](https://raw.githubusercontent.com/ateber/TabarekIPTV-for-SamsungSmartTV/main/Screenshots/2.png)
-
+![Photoshot of TabarekTV](https://raw.githubusercontent.com/ateber/TabarekIPTV-for-SamsungSmartTV/main/Screenshots/3.png)
+![Photoshot of TabarekTV](https://raw.githubusercontent.com/ateber/TabarekIPTV-for-SamsungSmartTV/main/Screenshots/4.png)
+![Photoshot of TabarekTV](https://raw.githubusercontent.com/ateber/TabarekIPTV-for-SamsungSmartTV/main/Screenshots/5.png)
+![Photoshot of TabarekTV](https://raw.githubusercontent.com/ateber/TabarekIPTV-for-SamsungSmartTV/main/Screenshots/6.png)
+![Photoshot of TabarekTV](https://raw.githubusercontent.com/ateber/TabarekIPTV-for-SamsungSmartTV/main/Screenshots/7.png)
+![Photoshot of TabarekTV](https://raw.githubusercontent.com/ateber/TabarekIPTV-for-SamsungSmartTV/main/Screenshots/8.png)
+![Photoshot of TabarekTV](https://raw.githubusercontent.com/ateber/TabarekIPTV-for-SamsungSmartTV/main/Screenshots/9.png) 
