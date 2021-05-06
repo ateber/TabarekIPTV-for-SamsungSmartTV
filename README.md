@@ -17,5 +17,6 @@ TabarekIPTV is my own project I built on https://github.com/kosmodrey/hackTV :)
 * And Others features :)
 
 
-![Photoshot of TabarekTV](https://raw.githubusercontent.com/ateber/TabarekIPTV-for-SamsungTV/main/main.png)
+![Photoshot of TabarekTV](https://raw.githubusercontent.com/ateber/TabarekIPTV-for-SamsungSmartTV/main/Screenshots/1.png)
+![Photoshot of TabarekTV](https://raw.githubusercontent.com/ateber/TabarekIPTV-for-SamsungSmartTV/main/Screenshots/2.png)
 
