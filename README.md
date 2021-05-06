@@ -4,6 +4,7 @@ TabarekIPTV is my own project I built on https://github.com/kosmodrey/hackTV :)
 ## New Features I added
 
 * Tabble View
+* Listing the channels in fullscreen
 * Categorizing the channels
 * Searching channel by name
 * Added channel list url and running from the there
