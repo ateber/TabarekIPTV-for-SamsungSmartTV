@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    
+    <title>Tabarek TV</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <!-- Samsung's WebAPI -->
+    <script src='$WEBAPIS/webapis/webapis.js'></script>
+    <!-- Components -->
+    <script src="js/logger.js"></script>
+    <script src="js/parser.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/db.js"></script> 
+    <!-- Libs -->
+
+    <!-- <script src="Clusterize/clusterize.min.js"></script>  
+    <link rel="stylesheet" href="Clusterize/clusterize.css">  -->
+    
+    <!--<script src="megalist/lib/jquery-1.7.1.js"> </script>
+    <script src="megalist/src/megalist.js"> </script>
+    <link rel="stylesheet" href="megalist/src/megalist.css"  type="text/css">  
+    
+    <link rel="stylesheet" href="megalist/lib/google-code-prettify/prettify.css">  
+    <script src="megalist/lib/google-code-prettify/prettify.js"> </script> 
+    <script src="megalist/lib/raf.js"> </script>-->
+    
+    <!-- Application -->
+    <script src="js/app.js"></script>
+
+  </head>
+
+  <body>  
+
+    <div id="settings-panel"  >
+
+      <button class="tablink" tabindex="-1"  >Home</button>
+      <button class="tablink" tabindex="-1"   >User Control</button>
+      <button class="tablink" tabindex="-1"   >Black List Category</button>
+      <button class="tablink" tabindex="-1"  >Black List Channel</button>
+      
+      <div id="home" class="tabcontent">
+        <h4 style="text-align: center;">Add Links</h4>
+        <div class="links-container">
+          <form   onsubmit="event.preventDefault()" accept-charset="utf-8">  
+            <table id="links-table" class="table-panel"   cellspacing="10"  cellpadding="10" border="0"  width="100%">
+              <tr> 
+                <td width="10%" >Link 1</td>
+                <td width="90%" ><input  type="text" id="link1" ></td> 
+              </tr>
+              <tr> 
+                <td width="10%">Link 2</td>
+                <td width="90%"><input type="text" id="link2" ></td> 
+              </tr>
+              <tr> 
+                <td width="10%">Link 3</td>
+                <td width="90%"><input type="text" id="link3" ></td> 
+              </tr>
+              <tr> 
+                <td width="10%">Link 4</td>
+                <td width="90%"><input type="text" id="link4" ></td> 
+              </tr>
+              <tr> 
+                <td width="10%">Link 5</td>
+                <td width="90%"><input type="text" id="link5" ></td> 
+              </tr>
+            </table>  
+            <table   cellspacing="10"  cellpadding="10" border="0"  width="100%">
+              <tr> 
+                <td width="10%"></td>
+                <td width="30%"><input id="save-links" class="save-input" type="button" value="Save"></td>
+                <td width="30%" ><input id="reset-links" class="reset-input" type="button"  value="Refresh"></td>
+                <td width="30%"><input id="clear-links" class="clear-input" type="reset"  value="Clear All"></td> 
+              </tr>
+            </table>    
+            
+            <h4 id="message-links"></h4>
+          </form>   
+        </div> 
+      </div>
+      
+      <div id="user-control" class="tabcontent">
+        <h4 style="text-align: center;">Change Password</h4>
+        <div class="psw-container">
+          <form   onsubmit="event.preventDefault()" accept-charset="utf-8"> 
+
+            <table  class="table-panel"   cellspacing="10"  cellpadding="10" border="0"  width="100%">
+              <tr> 
+                <td width="25%" >Current Password (Default:00000)</td>
+                <td width="75%" ><input type="number" id="current-psw" oninput="if(this.value.length>5) this.value='';"></td> 
+              </tr>
+              <tr> 
+                <td width="25%">New Password</td>
+                <td width="75%"><input type="number" id="new-psw"  oninput="if(this.value.length>5) this.value='';"></td> 
+              </tr>
+              <tr> 
+                <td width="25%">Confirm Password</td>
+                <td width="75%"><input type="number" id="confirm-psw" oninput="if(this.value.length>5) this.value='';"> </td> 
+              </tr>
+            </table>    
+            <table   cellspacing="10"  cellpadding="10" border="0"  width="100%">
+              <tr> 
+                <td width="25%"></td>
+                <td width="36.5%" ><input id="save-psw" class="save-input" type="button" value="Save">  </td>
+                <td width="37.5%"><input id="clear-psw" class="clear-input" type="reset"  value="Clear All"> </td> 
+              </tr>
+            </table>  
+            <h4 id="message-psw"></h4>
+          </form>  
+        </div> 
+      </div>
+      
+      <div id="blacklist-category" class="tabcontent">
+
+        <h4 style="text-align: center;">Add Black List Category</h4>
+        
+        <div class="blacklist-category-container"> 
+          <form onsubmit="event.preventDefault()" style="height: 100%;" accept-charset="utf-8" >
+             
+            <table cellspacing="10" cellpadding="0" border="0" width="100%" >
+              <tr style="color:#ffff00;">
+                <th class="blacklist-category-number-th"></th> 
+                <th class="blacklist-category-name-th">Category Name</th> 
+                <th class="blacklist-category-delete-th"></th> 
+              </tr>
+            </table>
+
+            <div class="blacklist-category-body">
+              <div id="blacklist-category-sidebar" class="blacklist-category-sidebar"  >
+                <table id="blacklist-category-table" style="border-spacing: 16px;"   bordercolor="#555" cellspacing="0"  cellpadding="5" border="0"  width="100%"> 
+                </table>  
+              </div>
+            </div> 
+          
+            <table   cellspacing="0"  bordercolor="#777"   cellpadding="4"  border="0" style="margin-top: 15px;" width="100%">
+              <tr> 
+                <td  width="12.5%"><input id="first-blacklist-category" class="next-back-input" type="button" value="<< First"> </td>
+                <td  width="12.5%"><input id="back-blacklist-category" class="next-back-input" type="button" value="<< Back"> </td>
+                <td  width="50%" id="ratio-blacklist-category" style="color: #ffffff;text-align: center;">10 / 50 </td>
+                <td  width="12.5%"><input id="next-blacklist-category" class="next-back-input" type="button" value="Next >>"> </td>  
+                <td  width="12.5%"><input id="end-blacklist-category" class="next-back-input" type="button" value="End >>"> </td>  
+              </tr>
+            </table> 
+            
+            <table bordercolor="#555"    cellspacing="0"   cellpadding="4" border="0" style="margin-top: 15px;"  width="100%">
+              <tr  > 
+                <td  width="25%" ><input id="save-blacklist-category" class="save-input" type="button" value="Save"> </td>
+                <td  width="25%"> <input id="reset-blacklist-category" class="reset-input" type="button"  value="Refresh"> </td>
+                <td  width="25%"><input id="clear-blacklist-category" class="clear-input" type="button"  value="Delete All"> </td>  
+                <td  width="25%"><input id="add-blacklist-category" class="add-input" type="button"  value="Add"> </td>   
+              </tr>
+            </table>  
+              
+            <h4 id="message-blacklist-category"></h4>
+
+          </form>
+        </div>  
+      </div>
+      
+      <div id="blacklist-channel" class="tabcontent"> 
+
+        <h4 style="text-align: center;"> Add Black List Channel</h4>
+
+        <div class="blacklist-channel-container"  >
+          <form  onsubmit="event.preventDefault()" style="height: 100%;"  accept-charset="utf-8">  
+
+            <table cellspacing="10" cellpadding="0" border="0" width="100%" >
+              <tr style="color:#ffff00; ">
+                <th class="blacklist-channel-number-th"></th> 
+                <th class="blacklist-channel-name-th">Channel Name</th> 
+                <th class="blacklist-channel-url-th">URL</th>
+                <th class="blacklist-channel-delete-th"></th>
+              </tr>
+            </table>
+
+            <div class="blacklist-channel-body" >
+              <div id="blacklist-channel-sidebar" class="blacklist-channel-sidebar">
+                <table id="blacklist-channel-table" style="border-spacing: 16px;"  cellspacing="0"  cellpadding="5" border="0"  width="100%"> 
+                </table>  
+              </div>  
+            </div>
+            
+              
+            <table   cellspacing="0"  cellpadding="4" border="0" style="margin-top: 15px;"  width="100%">
+              <tr> 
+                <td  width="12.5%"><input id="first-blacklist-channel" class="next-back-input" type="button" value="<< First"> </td>
+                <td  width="12.5%"><input id="back-blacklist-channel" class="next-back-input" type="button" value="<< Back"> </td>
+                <td  width="50%" style="text-align: center;" id="ratio-blacklist-channel" > 10 / 5555 </td>
+                <td  width="12.5%"><input id="next-blacklist-channel" class="next-back-input" type="button" value="Next >>"> </td>  
+                <td  width="12.5%"><input id="end-blacklist-channel" class="next-back-input" type="button" value="End >>"> </td>  
+              </tr>
+            </table> 
+            <table   cellspacing="0"  cellpadding="4" border="0" style="margin-top: 15px;" width="100%">
+              <tr> 
+                <td  width="25%" ><input id="save-blacklist-channel" class="save-input" type="button" value="Save">  </td>
+                <td  width="25%"> <input id="reset-blacklist-channel" class="reset-input" type="button"  value="Refresh"> </td>
+                <td  width="25%"><input id="clear-blacklist-channel" class="clear-input" type="button"  value="Delete All"> </td>  
+                <td  width="25%"><input id="add-blacklist-channel" class="add-input" type="button"  value="Add"> </td>   
+              </tr>
+            </table>  
+            
+            <h4 id="message-blacklist-channel"></h4>
+             
+          </form>
+        </div> 
+      </div>
+
+
+    </div> 
+ 
+
+
+     
+    
+    <div id="header" class="header">
+      <h1>Tabarek TV</h1>
+      <div class="top-channel-info">
+        <div class="build"></div> 
+        <div id="channel-count"></div>
+      </div>  
+      <div class="settings" > 
+        <button id="search" tabindex="-1"  class="button-syle-1"></button> 
+        <button id="refresh" tabindex="-1"  class="button-syle-1"></button>
+        <button id="lock" tabindex="-1"  class="button-syle-1 unlock"></button>
+        <button id="general-settings" tabindex="-1" class="button-syle-1"></button>   
+          <!-- <input  id="search-input" class="search-input" placeholder="Search . . " type="text"> --> 
+      </div>
+    </div>  
+
+    <div id="search-panel" class="hide">
+      <div id="search-container" >
+        <input  id="search-input" placeholder="Search . . " type="text">
+      </div> 
+    </div>
+
+    <div id="choice-panel" class="choice-panel">
+      <div id="choice-exit" class="choice-exit hide">
+        <div class="choice-message">Are you sure you want to exit TabarekTV&nbsp;?</div>
+        <button id="choice-exit-yes" tabindex="-1" class="button-syle-2 choice-exit-buttton selected">Yes</button>
+        <button id="choice-exit-no" tabindex="-1" class="button-syle-2 choice-exit-buttton">No</button>
+      </div> 
+    </div>
+
+    <div id="section" class="section"> 
+      <div id="sidebar" class="sidebar"> 
+        <div id="top-sidebar" style="margin:0px;padding:0px;height: 0px;visibility: hidden;"></div>
+          <ul id="channel-list">  
+          </ul> 
+        <div id="bottom-sidebar" style="margin:0px;padding:0px;height:0px;visibility: hidden;"></div>   
+      </div>
+      <div id="info" class="info"></div> 
+      <div class="screen"> 
+         
+        <object id='av-player' type='application/avplayer'></object>  
+      </div>
+      
+    </div>   
+
+    <div id="cursor" class="hide"></div>
+    <div id="log" class="hide"></div> 
+   	<div id="number-key-panel" class="hide"></div>
+    <div id="lock-panel"   class="hide" >
+      <div style="font-size:1.5em;padding: 0.4em;margin-bottom: 0.5em; ">Please type password and unlock: </div>
+      <div id="password"  ></div> 
+    </div>
+    
+    
+
+   	<div id="bottom-channel-info" class="hide"> 
+   		<div id="bottom-channel-info-number">-</div>
+   		<div id="bottom-channel-info-right">
+   			<div id="bottom-channel-info-name">No Playing Channel..</div> 
+   			<div id="player-time-control">
+   				<div id="elapsed-time" class="elapsed-time">00:00:00</div>
+	      		<div class="slider-bar-panel">
+	      			<input id="slider-bar" type="range" min="0" max="3600000" value="0" >
+	      			<div id="target-time" class="target-time">00:00:00</div>
+	      		</div> 
+	      		<div id="total-time" class="total-time">00:00:00</div> 
+   			</div> 
+   		</div>
+      <div id="bottom-channel-logo" class="bottom-channel-logo default-background-img"  ></div>  
+    </div> 
+
+
+
+  </body>
+</html>
+
+<!-- <div id="tv-message hide" >
+            <div style="font-size: 2em;padding: 1em;text-align: center;">Wellcome to Tabarek TV&nbsp;☺</div>  
+            <div class="remote-button" ><span class="remote-button-a">A</span><span>&nbsp;&nbsp;Add Category or Channel to blacklist</span></div> 
+            <div class="remote-button" ><span class="remote-button-b">B</span><span>&nbsp;&nbsp;Lock / Unlock system </span></div> 
+            <div class="remote-button" ><span class="remote-button-c">C</span><span>&nbsp;&nbsp;On / Off Cursor</span></div> 
+            <div class="remote-button" ><span class="remote-button-d">D</span><span>&nbsp;&nbsp;Go to Settings</span></div> 
+      
+            <div  class="remote-button" style="margin-left: -1.3em;"> 
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+              <span class="remote-button-standart" >▲</span> 
+              <div style="margin-top: 0.7em;margin-bottom: 0.7em;margin-left: -0.4em; ">
+                <span class="remote-button-standart" >◀</span>&nbsp; 
+                <span class="remote-button-standart">OK</span>&nbsp;  
+                <span class="remote-button-standart">▶</span>&nbsp;&nbsp;Move the cursor and click buttons If cursor is on  
+              </div>
+              
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+              <span class="remote-button-standart">▼</span>
+            </div> 
+      
+            <div  class="remote-button" style="margin-left: -0.2em;"><span class="remote-button-standart">INFO</span>&nbsp;&nbsp; Show current channel info </div> 
+            <div  class="remote-button" style="margin-left: -1.4em;">
+              <span class="remote-button-standart">◀◀</span>&nbsp;&nbsp;
+              <span class="remote-button-standart">▶▶</span>&nbsp;&nbsp; 
+              Rewind or fast forward one percent of the stream If stream is not live
+            </div>   
+            <div  class="remote-button" style="margin-left: -1.4em;"> 
+              <span class="remote-button-standart">&nbsp;&nbsp;▶&nbsp;&nbsp;</span>&nbsp;&nbsp;
+              <span class="remote-button-standart"  >&nbsp;&nbsp;&#x2758;&nbsp;&#x2758;&nbsp;&nbsp;</span>&nbsp;&nbsp;
+              Play or Pause the stream
+            </div>  
+            <div class="remote-button" style="margin-left: -2.2em;" > 
+              <div class="remote-button">
+                <span class="remote-button-standart">&nbsp;1&nbsp;</span>&nbsp;&nbsp;
+                <span class="remote-button-standart">&nbsp;2&nbsp;</span>&nbsp;&nbsp; 
+                <span class="remote-button-standart">&nbsp;3&nbsp;</span>&nbsp;&nbsp;
+              </div>
+              <div class="remote-button">
+                <span class="remote-button-standart">&nbsp;4&nbsp;</span>&nbsp;&nbsp; 
+                <span class="remote-button-standart">&nbsp;5&nbsp;</span>&nbsp;&nbsp; 
+                <span class="remote-button-standart">&nbsp;6&nbsp;</span>&nbsp;&nbsp; 
+                Jump a specific channel or category and type password
+              </div> 
+              <div class="remote-button">
+                <span class="remote-button-standart">&nbsp;7&nbsp;</span>&nbsp;&nbsp; 
+                <span class="remote-button-standart">&nbsp;8&nbsp;</span>&nbsp;&nbsp;  
+                <span class="remote-button-standart">&nbsp;9&nbsp;</span>&nbsp;&nbsp; 
+              </div>
+              <div class="remote-button">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                <span class="remote-button-standart">&nbsp;0&nbsp;</span>
+              </div>   
+            </div> 
+          </div> -->
