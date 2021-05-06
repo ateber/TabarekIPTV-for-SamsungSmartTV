@@ -17,7 +17,7 @@ TabarekIPTV is my own project I built on https://github.com/kosmodrey/hackTV :)
 * Added shortcut buttons
 * And Others features :)
 
-NOTE: I downloaded channels list for example. 
+NOTE: I downloaded channel list for example. 
 
 # Screenshots 
 
