@@ -1,6 +1,6 @@
 # TabarekIPTV-for-SamsungTV
 TabarekIPTV is my own project I built on https://github.com/kosmodrey/hackTV :)
-
+![Photoshot of TabarekTV](https://raw.githubusercontent.com/ateber/TabarekIPTV-for-SamsungSmartTV/main/icon.png)
 ## New Features I added
 
 * Tabble View
@@ -18,6 +18,7 @@ TabarekIPTV is my own project I built on https://github.com/kosmodrey/hackTV :)
 * And Other new features :)
 
 NOTE: I downloaded channel list for example. 
+
  
 # Screenshots 
 
